@@ -1,0 +1,22 @@
+{
+  "name": "gamedevgt-bot",
+  "version": "1.0.0",
+  "description": "GameDevGT's bot to handle twitter interactions.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/bot.js"
+  },
+  "keywords": [
+    "gamedev",
+    "twitter",
+    "bot"
+  ],
+  "author": "Ricardo 'Rik' Illescas, riktothepast@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "human-to-cron": "^0.3.1",
+    "node-schedule": "^1.3.0",
+    "twit": "^2.2.9"
+  }
+}
