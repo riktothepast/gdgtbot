@@ -1,0 +1,14 @@
+[
+    {
+        "message": "hello there",
+        "response": "General Kenobi!"
+    },
+    {
+        "message": "General Kenobi",
+        "response": "You're a bold one!"
+    },
+    {
+        "message": "digame licenciado",
+        "response": "¡Gracias!, ¡Muchas gracias!"
+    }
+]
