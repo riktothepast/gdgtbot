@@ -10,6 +10,7 @@ client.login(config.token);
 
 const configuration = {
   responses,
+  prefix: config.prefix
 };
 
 handler(client, configuration);

@@ -1,0 +1,24 @@
+{
+    "greets": [
+        "¡Hola @username!, Bienvenido al Discord Game Dev GT",
+        "¡Hey! @username acaba de unirse al Discord de Game Dev GT"
+    ],
+    "community": {
+        "description": "",
+        "channelInfo": "Te invitamos a que revises los diferentes canales, algunos que puedan interesarte:"
+    },
+    "channels": [
+        {
+            "name": "programacion"
+        },
+        {
+            "name": "arte"
+        },
+        {
+            "name": "muestra_tu_progreso"
+        },
+        {
+            "name": "lanzamiento_de_juegos"
+        }
+    ]
+}
