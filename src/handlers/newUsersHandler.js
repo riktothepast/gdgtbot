@@ -3,15 +3,23 @@
 const greetings = require('../../config/greeting.json');
 
 function newUser(user) {
+  let message = '';
   const greets = greetings.greets;
-  let message = greets[Math.floor(Math.random()*greets.length)];
-  message = message.replace('@username', user.username);
+  let greet = greets[Math.floor(Math.random() * greets.length)];
+  greet = greet.replace('@username', user.username);
 
   const info = greets.community.channelInfo;
 
-  const channels = greets.channels;
-  
-  return msg;
+  let channels = '';
+  greets.community.channels.forEach(element => {
+    channels += `${element.name}\n`;
+  });
+
+  message += `${greet}\n`;
+  message += `${info}\n\n`;
+  message += `${channels}\n`;
+
+  return message;
 }
 
 module.exports = newUser;

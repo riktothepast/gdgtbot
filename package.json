@@ -1,6 +1,6 @@
 {
   "name": "gdgt-discord-bot",
-  "version": "1.0.0",
+  "version": "0.1",
   "description": "A bot for GDGT's actions",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,7 @@
   "author": "Ricardo 'rik' Illescas <riktothepast@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "~11.4.2"
+    "discord.js": "~11.4.2",
+    "node-google-calendar": "~1.1.1"
   }
 }

@@ -1,4 +1,10 @@
 {
     "prefix": "g",
-    "token": ""
+    "token": "",
+    "googleCalendar": {
+        "keyFile": "",
+        "serviceAcctId": "",
+        "calendarId": "",
+        "timezone": "UTC-06:00"
+    }
 }

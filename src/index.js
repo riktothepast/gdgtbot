@@ -1,10 +1,12 @@
 'use strict';
 
-const responseHandler = require('./handlers/responseHandler')
-const greetingsHandler = require('./handlers/newUsersHandler')
+const responseHandler = require('./handlers/responseHandler');
+const greetingsHandler = require('./handlers/newUsersHandler');
+const eventsHanderFactory = require('./handlers/calendar');
 
 
 function discordBot(client, configuration) {
+  const eventHandler = eventsHanderFactory(configuration);
   client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
   });
@@ -21,13 +23,13 @@ function discordBot(client, configuration) {
   client.on('message', msg => {
     if (msg.content.startsWith(configuration.prefix)) {
       const command = msg.content.split(' ')[1].toLowerCase();
-      switch(command) {
+      switch (command) {
         case 'help':
 
           break;
-        case 'calendar': 
+        case 'event':
+          eventHandler(msg);
           break;
-        
         default:
           responseHandler(msg);
           break;
