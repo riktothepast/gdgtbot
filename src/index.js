@@ -4,7 +4,6 @@ const responseHandler = require('./handlers/responseHandler');
 const greetingsHandler = require('./handlers/newUsersHandler');
 const eventsHanderFactory = require('./handlers/calendar');
 
-
 function discordBot(client, configuration) {
   const eventHandler = eventsHanderFactory(configuration);
   client.on('ready', () => {

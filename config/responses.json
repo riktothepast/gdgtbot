@@ -1,7 +1,21 @@
 {
     "help": {
-        
+
     },
+    "errors": [
+        {
+            "message": "Ya nada puede malir sal."
+        },
+        {
+            "message": "¡Ayayayay! mis sensores detectan problemas."
+        },
+        {
+            "message": "Lo lamento, me temo que soy incapaz de hacer eso."
+        },
+        {
+            "message": "¿Y si me apagan y me vuelven a encender?"
+        }
+    ],
     "phrases":[
         {
             "message": "hello there",

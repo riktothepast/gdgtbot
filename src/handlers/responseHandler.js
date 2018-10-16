@@ -1,6 +1,6 @@
 'use strict';
 
-const responses = require('../../config/responses.json');
+const responses = require('../../config/responses.json').phrases;
 
 function handler(msg) {
   responses.forEach(response => {
