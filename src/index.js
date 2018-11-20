@@ -2,7 +2,10 @@
 
 const responseHandler = require('./handlers/responseHandler');
 const greetingsHandler = require('./handlers/newUsersHandler');
+const jsonResponse = require('./handlers/jsonResponse');
 const eventsHanderFactory = require('./handlers/calendar');
+
+const helpResponse = require('../config/help.json');
 
 function discordBot(client, configuration) {
   const eventHandler = eventsHanderFactory(configuration);
@@ -21,10 +24,10 @@ function discordBot(client, configuration) {
 
   client.on('message', msg => {
     if (msg.content.startsWith(configuration.prefix)) {
-      const command = msg.content.split(' ')[1].toLowerCase();
+      const command = msg.content.split(configuration.prefix)[1].toLowerCase();
       switch (command) {
         case 'help':
-
+          jsonResponse(helpResponse, msg);
           break;
         case 'event':
           eventHandler(msg);

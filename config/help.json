@@ -1,0 +1,18 @@
+{
+  "title": ":The book of spells:",
+  "description": "Quien sea digno podra invocar cualquiera de los siguientes comandos, anteponiendo el prefijo *!*",
+  "fields": [
+    {
+      "name": "help",
+      "value": "Invoca a este fiel servidor."
+    },
+    {
+      "name": "article",
+      "value": "Obten un articulo aleatorio relacionado con desarrollo de video juegos"
+    },
+    {
+      "name": "calendar",
+      "value": "Obten los proximos eventos de la comunidad"
+    }
+  ]
+}

@@ -1,23 +1,26 @@
 {
-    "greets": [
-        "¡Hola @username!, Bienvenido al Discord Game Dev GT",
-        "¡Hey! @username acaba de unirse al Discord de Game Dev GT"
+    "title": "Bienvenido al Discord de Game Dev GT",
+    "description": "Te invitamos a que revises los diferentes canales, algunos que puedan interesarte:",
+    "fields": [
+      {
+        "name": "#programacion",
+        "value": "¿Lo tuyo es el codigo? Lo nuestro tambien, ¡hablemos de algoritmos!"
+      },
+      {
+        "name": "#arte",
+        "value": "3D, 2D, ilustraciones, bocetos, pixel art. !Aca tenemos de todo!"
+      },
+      {
+        "name": "#muestra_tu_progreso",
+        "value": "¿Estas trabajando en algun proyecto? Muestra tus avances y ve los de los demas en este canal."
+      },
+      {
+        "name": "#lanzamiento_de_juegos",
+        "value": "Mantente al dia de los nuevos juegos hechos por la comunidad."
+      }
     ],
-    "community": {
-        "channelInfo": "Te invitamos a que revises los diferentes canales, algunos que puedan interesarte:",
-        "channels": [
-            {
-                "name": "programacion"
-            },
-            {
-                "name": "arte"
-            },
-            {
-                "name": "muestra_tu_progreso"
-            },
-            {
-                "name": "lanzamiento_de_juegos"
-            }
-        ]
+    "footer": {
+        "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png",
+        "text": "20XX GameDevGT"
     }
-}
+  }

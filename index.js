@@ -10,7 +10,7 @@ const handler = require('./src');
 client.login(config.token);
 
 const googleCalendar = Object.assign({}, config.googleCalendar);
-googleCalendar.key = key;
+googleCalendar.key = key.private_key;
 
 const configuration = {
   googleCalendar,

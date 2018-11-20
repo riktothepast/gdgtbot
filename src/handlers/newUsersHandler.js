@@ -19,6 +19,8 @@ function newUser(user) {
   message += `${info}\n\n`;
   message += `${channels}\n`;
 
+  message += `${greets.community.help}`;
+
   return message;
 }
 
