@@ -1,13 +1,8 @@
 {
-    "prefix": "g",
+    "prefix": "!",
     "token": "",
-    "googleCalendar": {
-        "serviceAcctId": "",
-        "calendarId": {
-            "primary": "",
-            "calendar-1": "calendar1@group.calendar.google.com",
-            "calendar-2": "calendar2@group.calendar.google.com"
-          },
-        "timezone": "UTC-06:00"
+    "calendar": {
+        "primary": "",
+        "scopes": ["https://www.googleapis.com/auth/calendar"]
     }
 }

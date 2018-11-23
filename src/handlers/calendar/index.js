@@ -1,27 +1,20 @@
 'use strict';
 
-const CalendarAPI = require('node-google-calendar');
-const eventListFactory = require('./eventList');
-const eventCreateFactory = require('./eventCreation');
-const phrases = require('../../phraseManager')();
+const gCalendar = require('gCalendar');
+const eventList = require('./eventList');
+let calendarList;
+let listEvents;
 
 function configure(config) {
-  const calendar = new CalendarAPI(config.googleCalendar);
-  const eventList = eventListFactory(calendar, config.googleCalendar.calendarId);
-  const eventCreation = eventCreateFactory(calendar, config.googleCalendar.calendarId);
+  gCalendar(config.googleCalendar.privateKey, config.googleCalendar.scopes).then(cEvents => {
+    calendarList = cEvents.list;
+    listEvents = eventList(calendarList, config.googleCalendar.primary);
+  });
 
   function handler(msg) {
-    eventList()
-      .then((events) => {
-        console.log(events);
-        msg.reply(events);
-      })
-      .catch((error) => {
-        console.log(error);
-        msg.reply(
-          `${phrases.errors[Math.floor(Math.random() * phrases.errors.length)].message} ${error.toString()}`
-          );
-      });
+    listEvents(10)
+      .then(message => msg.reply(message))
+      .catch(message => msg.reply(message));
   }
 
   return handler;

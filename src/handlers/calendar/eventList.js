@@ -1,15 +1,36 @@
 'use strict';
+const phrases = require('../../phraseManager')();
 
-function listEvents(calendar, calendarId) {
-  function searchEvents(start, end) {
+function listEvents(eventsList, calendarId) {
+  function searchEvents(maxResults) {
     const params = {
-      timeMin: start,
-      timeMax: end,
+      maxResults,
       singleEvents: true,
       orderBy: 'startTime',
     };
 
-    return calendar.Events.list(calendarId, params);
+    return eventsList(calendarId, params)
+      .then((res) => {
+        const fields = [];
+        const responseJson = {
+          title: 'Encontre los siguientes eventos: ',
+          fields,
+        };
+        res.data.items.forEach(element => {
+          fields.push(
+            {
+              name: element.summary,
+              value: element.created,
+            }
+          );
+        });
+        return {
+          embed: responseJson,
+        };
+      })
+      .catch((error) => (
+        `${phrases.errors[Math.floor(Math.random() * phrases.errors.length)].message} ${error.toString()}`
+      ));
   }
 
   return searchEvents;

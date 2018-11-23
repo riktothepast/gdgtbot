@@ -9,8 +9,8 @@ const handler = require('./src');
 
 client.login(config.token);
 
-const googleCalendar = Object.assign({}, config.googleCalendar);
-googleCalendar.key = key.private_key;
+const googleCalendar = Object.assign({}, config.calendar);
+googleCalendar.privateKey = key;
 
 const configuration = {
   googleCalendar,
