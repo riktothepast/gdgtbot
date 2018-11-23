@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "discord.js": "~11.4.2",
-    "gCalendar": "git+https://github.com/riktothepast/gCalendar.git"
+    "gCalendar": "git+https://github.com/riktothepast/gCalendar.git",
+    "moment": "~2.22.2"
   }
 }
