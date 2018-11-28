@@ -1,14 +1,9 @@
 'use strict';
 const phrases = require('../../phraseManager')();
+const moment = require('moment');
 
 function listEvents(eventsList, calendarId) {
-  function searchEvents(maxResults) {
-    const params = {
-      maxResults,
-      singleEvents: true,
-      orderBy: 'startTime',
-    };
-
+  function searchEvents(params) {
     return eventsList(calendarId, params)
       .then((res) => {
         const fields = [];
@@ -17,10 +12,11 @@ function listEvents(eventsList, calendarId) {
           fields,
         };
         res.data.items.forEach(element => {
+          const date = moment(element.start.dateTime).format('MMMM Do YYYY, h:mm:ss a');
           fields.push(
             {
               name: element.summary,
-              value: element.created,
+              value: `${element.location}\n${date}\n[Link](${element.htmlLink})`,
             }
           );
         });

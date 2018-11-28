@@ -7,10 +7,22 @@ const eventsHanderFactory = require('./handlers/calendar');
 
 const helpResponse = require('../config/help.json');
 
+const logo = 
+' ██████╗ ██████╗  ██████╗████████╗    ██████╗  ██████╗ ████████╗\n' +
+'██╔════╝ ██╔══██╗██╔════╝╚══██╔══╝    ██╔══██╗██╔═══██╗╚══██╔══╝\n' +
+'██║  ███╗██║  ██║██║  ███╗  ██║       ██████╔╝██║   ██║   ██║   \n' +
+'██║   ██║██║  ██║██║   ██║  ██║       ██╔══██╗██║   ██║   ██║   \n' +
+'╚██████╔╝██████╔╝╚██████╔╝  ██║       ██████╔╝╚██████╔╝   ██║   \n' +
+' ╚═════╝ ╚═════╝  ╚═════╝   ╚═╝       ╚═════╝  ╚═════╝    ╚═╝';
+
+function splitter(message) {
+  return message.toLowerCase().split(' ');
+}
+
 function discordBot(client, configuration) {
   const eventHandler = eventsHanderFactory(configuration);
   client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
+    console.log(logo);
   });
 
   client.on('guildMemberAdd', user => {
@@ -24,13 +36,18 @@ function discordBot(client, configuration) {
 
   client.on('message', msg => {
     if (msg.content.startsWith(configuration.prefix)) {
-      const command = msg.content.split(configuration.prefix)[1].toLowerCase();
+      const splittedMessage = splitter(msg.content.replace(configuration.prefix, ''));
+      const command = splittedMessage[0];
+
       switch (command) {
         case 'help':
           jsonResponse(helpResponse, msg);
           break;
-        case 'event':
-          eventHandler(msg);
+        case 'article':
+          msg.reply("Aun no estoy listo para mostrarte articulos, porfavor prueba en la siguiente version :D");
+          break;
+        case 'calendar':
+          eventHandler(msg, splittedMessage);
           break;
         default:
           responseHandler(msg);
