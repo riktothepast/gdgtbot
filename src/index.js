@@ -2,12 +2,13 @@
 
 const responseHandler = require('./handlers/responseHandler');
 const greetingsHandler = require('./handlers/newUsersHandler');
+const roleHandler = require('./handlers/roleHandler');
 const jsonResponse = require('./handlers/jsonResponse');
 const eventsHanderFactory = require('./handlers/calendar');
 
 const helpResponse = require('../config/help.json');
 
-const logo = 
+const logo =
 ' ██████╗ ██████╗  ██████╗████████╗    ██████╗  ██████╗ ████████╗\n' +
 '██╔════╝ ██╔══██╗██╔════╝╚══██╔══╝    ██╔══██╗██╔═══██╗╚══██╔══╝\n' +
 '██║  ███╗██║  ██║██║  ███╗  ██║       ██████╔╝██║   ██║   ██║   \n' +
@@ -44,10 +45,13 @@ function discordBot(client, configuration) {
           jsonResponse(helpResponse, msg);
           break;
         case 'article':
-          msg.reply("Aun no estoy listo para mostrarte articulos, porfavor prueba en la siguiente version :D");
+          msg.reply('Aun no estoy listo para mostrarte articulos, por favor prueba en la siguiente version :D');
           break;
         case 'calendar':
           eventHandler(msg, splittedMessage);
+          break;
+        case 'role':
+          roleHandler(msg, splittedMessage);
           break;
         default:
           responseHandler(msg);

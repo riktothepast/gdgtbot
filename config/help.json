@@ -1,6 +1,6 @@
 {
   "title": ":The book of spells:",
-  "description": "Quien sea digno podra invocar cualquiera de los siguientes comandos, anteponiendo el prefijo *!*",
+  "description": "Aquel sea digno, podra invocar cualquiera de los siguientes comandos, anteponiendo el prefijo *!*",
   "fields": [
     {
       "name": "help",
@@ -8,11 +8,15 @@
     },
     {
       "name": "article",
-      "value": "Obten un articulo aleatorio relacionado con desarrollo de video juegos"
+      "value": "Obten un articulo aleatorio relacionado con desarrollo de video juegos."
     },
     {
       "name": "calendar",
-      "value": "Obten los proximos eventos de la comunidad"
+      "value": "Obten los proximos eventos de la comunidad."
+    },
+    {
+      "name": "role",
+      "value": "Permite agregarte nuevos roles dentro de la comunidad. Utiliza *role help* para obtener mas detalles."
     }
   ]
 }

@@ -2,9 +2,26 @@
 const phrases = require('../../phraseManager')();
 const moment = require('moment');
 
+function generateParams(words) {
+  const params = {
+    maxResults: 5,
+    timeMin: (new Date()).toISOString(),
+    singleEvents: true,
+    orderBy: 'startTime',
+  };
+
+  words.forEach(element => {
+    if (!isNaN(element)) {
+      params.maxResults = element;
+    }
+  });
+
+  return params;
+}
+
 function listEvents(eventsList, calendarId) {
-  function searchEvents(params) {
-    return eventsList(calendarId, params)
+  function searchEvents(keywords) {
+    return eventsList(calendarId, generateParams(keywords))
       .then((res) => {
         const fields = [];
         const responseJson = {

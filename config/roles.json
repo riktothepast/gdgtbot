@@ -1,0 +1,26 @@
+{
+    "title": "Manejo de roles",
+    "description": "Los roles te permite asociarte a un grupo en especifico, acceder a canales relacionados y ser notificado por otros usuarios.",
+    "fields": [
+      {
+        "name": "role add *rol*",
+        "value": "Agrega un rol a tu usuario. Para obtener la lista de roles disponibles usa el comando *list*"
+      },
+      {
+        "name": "role remove *rol*",
+        "value": "Elimina un rol asociado a tu usuario."
+      },
+      {
+        "name": "role list",
+        "value": "Muestra la lista de roles disponibles"
+      },
+      {
+        "name": "role help",
+        "value": "Despliega la informacion de ayuda de roles."
+      }
+    ],
+    "footer": {
+        "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png",
+        "text": "20XX GameDevGT"
+    }
+  }
