@@ -1,6 +1,6 @@
 'use strict';
 
-const gCalendar = require('gCalendar');
+const gCalendar = require('gcalendar');
 const eventList = require('./eventList');
 let calendarList;
 let listEvents;
